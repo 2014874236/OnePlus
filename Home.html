@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
+		<link rel="icon"  href="img/logo.ico"/>
+		<title>一加手机-不将就</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/master.css"/>
+		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="header container" >
+			<div class="row">
+				<div class="navbar-header pull-left">
+			     	<a class="navbar-brand logo" href="Home.html"></a>
+				</div>
+				<div class="smallIcon pull-right">
+					<span class="glyphicon glyphicon-search hidden-xs"></span>
+					<span class="glyphicon glyphicon-shopping-cart"></span>
+					<span class="glyphicon glyphicon-user"></span>
+				    <span class="glyphicon glyphicon-menu-hamburger visible-xs-inline-block a" ></span>
+				</div>
+				<div class="drop-menu col-search">
+					<ul class="menu nav" id="myMenu">
+						<li><a href="">OnPlus5</a></li>
+						<li><a href="商城.html">商城</a></li>
+						<li><a href="服务.html">服务</a></li>
+						<li><a href="">博客</a></li>
+						<li><a href="" class="com">论坛</a></li>	
+					</ul>
+					<form class="form visible-xs">
+						<div class="row row-margin">
+							<div class="col-xs-12 text-center">
+								<span class="glyphicon glyphicon-chevron-down next"></span>
+							</div>
+						</div>
+						<div class="row row-margin">
+							<div class="col-xs-12 text-center">
+								<span class="glyphicon glyphicon-chevron-up prev"></span>
+							</div>
+						</div>
+						<div class="row row-margin">
+							<div class="col-xs-10">
+								<input type="text" value="" placeholder="搜索您的商品名称" class="search-text"/>
+							</div>
+							<div class="col-xs-2 search-icon text-right  ">
+								<span class="glyphicon glyphicon-search search" ></span>
+							</div>
+						</div>
+					</form>
+				
+				
+				</div>
+				<!--搜索-->
+				<!--<div class="part-search">-->
+					<div class="header-search hidden-xs clearfix">
+						<a href="" class="smallIcon1"><span class="glyphicon glyphicon-search pull-left"></span></a>
+						<input type="text" placeholder="搜索您的商品名称" class="search-top"/>
+						<ul class="list-unstyled menu-search">
+							<li><a href="">OnePlus 5</a></li>
+							<li><a href="">一加DASH闪充</a></li>
+							<li><a href="">OnePlus 5个性保护壳</a></li>
+							<li><a href="">电子发票</a></li>
+							<li><a href="">纳税人识别号</a></li>
+						</ul>
+					</div>
+					<div class="close-btn hidden-xs" style="display: none;">
+						<span class="btn close">X</span>
+					</div>
+				<!--</div>-->
+				
+				<!--购物车-->
+				<div class="shopping-cart">
+					<a href=""><p>你的购物车里没有商品！</p></a>
+				</div>
+			</div>
+		</div>
+		<div class="box">
+					
+		</div>
+		<script type="text/javascript">
+//		下拉菜单
+			$(".glyphicon-menu-hamburger").click(function(){
+				if($("#myMenu").is(":hidden") && $(".form").is(":hidden")){
+					$("#myMenu").show();
+					$(".next").hide();
+					$(".drop-menu").slideDown(700);
+				}
+				else{
+					$(".drop-menu").slideUp(700);
+				}
+				if($(".box").css("display")==="none"){
+					$(".box").css("display","block");
+					$("body").css("overflow","hidden");
+				}
+				else{
+					$(".box").css("display","none");
+					$("body").css("overflow","initial");
+				}
+			});
+//			下拉菜单里面的搜索框
+			$(".search-text").focus(function(){
+				$("#myMenu").slideUp();
+				$(".next").css("display","block");
+				$(".form").css("top","200px");
+			});
+			$(".next").click(function(){
+				$(".next").css("display","none");
+				$(".prev").css("display","block");
+//				箭头停留多长时间后隐藏
+				$(".prev").delay(100).hide(0);    
+				$("#myMenu").slideDown(1000);
+			});
+//			搜索
+			$(".glyphicon-search").click(function(){
+				$(".box").css("display","block");
+				$("body").css("overflow","hidden");	
+				$(".close-btn").css("display","block");
+				$(".menu").css("display","none");
+				$(".smallIcon span:not(.smallIcon span:last-child)").css("visibility","hidden");
+				$(".header-search").slideDown(700);
+			});
+//			关闭按钮
+			$(".close-btn").click(function(){
+				$(".box").css("display","none");
+				$("body").css("overflow","initial");
+				$(".header-search").slideUp(700);
+				$(".close-btn").css("display","none");
+				$(".menu").css("display","block");
+				$(".smallIcon span").css("visibility","visible");
+				$(".box").css("display","none");
+				
+				
+				
+			});
+//			购物车
+			$(".glyphicon-shopping-cart").hover(function(){
+				$(".shopping-cart").css("display","block");
+			},function(){
+				$(".shopping-cart").css("display","none");
+			});
+			$(".shopping-cart").hover(function(){
+				$(".shopping-cart").css("display","block");
+			},function(){
+				$(".shopping-cart").css("display","none");
+			});
+		</script>
+
+
+		
+		<!--OnePlus5 高清双摄-->
+		<div class="background-img clearfix">
+			<a href=""><div class="img1"></div></a>
+		</div>
+
+		<!--个性保护壳等-->
+		<div class="background-img clearfix">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-padding">
+				<p>OnePlus 5个性保护壳</p>
+				<a href=""><div class="img3"></div></a>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-padding">
+				<p>花样晒单赢好礼</p>
+				<a href=""><div class="img4"></div></a>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-padding">
+				<p>极速闪充的黄金搭档</p>	
+				<a href=""><div class="img5"></div></a>
+			</div>
+		</div>
+		<!--我要参加部分-->
+		<div class="background-img background-img6 clearfix">
+			<img src="img/img6.jpg" class="img6"/>
+			<img src="img/img6-small.jpg" class="img-responsive img6-small"/>
+			<div class="img-title">
+				<p>Shot On OnePlus</p>
+				<button class="btn btn-1">我要参加</button>	
+			</div>
+		</div>
+		<!--博客、新闻、视频等-->
+		<div class="part clearfix">
+			<div class="info">
+				<a href="">
+					<div class="blog">
+						<img src="img/img7.jpg"/>
+						<h4>博客</h4>
+						<p>OnePlus 又又又排队了，隔着屏幕都能感受到热情</p>
+					</div>
+				</a>
+				<a href="">
+					<div class="news">
+						<img src="img/img8.jpg"/>
+						<h4>新闻</h4>
+						<p>OnePlus5 的媒体测评汇总</p>
+					</div>
+				</a>
+				<a href="">
+					<div class="video">
+						<img src="img/img9.jpg"/>
+						<h4>视频</h4>
+						<p>OnePlus 5  新品发布会</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!--售后信息等-->
+		<div class="saleInfo">
+			<div class="container ">
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+						<a href="" class="Icon">
+							<i class="i1"></i>
+							<p class="text">1小时售后派单响应</p>
+						</a>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+						<a href=""  class="Icon">
+							<i class="i7"></i>
+							<p class="text">7天无理由退货</p>
+						</a>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+						<a href=""  class="Icon Icon1">
+							<i class="i15"></i>
+							<p class="text">15天退货保障</p>
+						</a>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+						<a href=""  class="Icon Icon1">
+							<i class="i30"></i>
+							<p class="text">30天换货保障</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--相关产品信息-->
+		<div class="footer hidden-xs">
+			<div class="col-lg-8 col-md-8 col-sm-8  col-xs-12 footer-padding">
+				<div class="col-lg-3 col-md-4 col-sm-3 col-xs-12 footer-top phone">
+					<h4>一加产品<span class="glyphicon glyphicon-chevron-down pull-right next1"></span></h4>
+					<ul class="list-unstyled">
+						<li><a href=""><p>OnePlus5</p></a></li>
+						<li><a href=""><p>一加手机3T</p></a></li>
+						<li><a href=""><p>一加手机3</p></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-3 col-xs-12 footer-top phone1">
+					<h4>关于一加<span class="glyphicon glyphicon-chevron-down pull-right next2"></span></h4>
+					<ul class="list-unstyled">
+						<li><a href=""><p>了解一加</p></a></li>
+						<li><a href=""><p>加入一加</p></a></li>
+						<li><a href=""><p>H2OS</p></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-3 col-xs-12 footer-top">
+					<h4>服务支持<span class="glyphicon glyphicon-chevron-down pull-right next3"></span></h4>
+					<ul class="list-unstyled">
+						<li><a href=""><p>自助服务</p></a></li>
+						<li><a href=""><p>技术支持</p></a></li>
+						<li><a href=""><p>售后服务</p></a></li>
+						<li><a href=""><p>一加加多保</p></a></li>
+					</ul>
+				</div>
+			
+			</div>
+			<div class="col-lg-4 col-md-3 col-sm-3 col-xs-12 footer-padding">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 call ">
+					<div class="pull-right tellphoneInfo">
+						<span class="call-text">客服电话：</span>
+						<h1 class="call-number">400-888-1111</h1>
+						<a href="" class="flag"><img src="img/flag.png"></a>
+						<span class="call-text flag flag-text">Change location</span>
+						<button class="btn btn-default btn-call">在线客服</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer visible-xs">
+			<div class="col-lg-8 col-md-8 col-sm-8  col-xs-12 footer-padding">
+				<div class="col-lg-3 col-md-4 col-sm-3 col-xs-12 footer-top phone">
+					<h4 class="drop1">一加产品<span class="glyphicon glyphicon-chevron-down pull-right next1"></span></h4>
+					<ul class="list-unstyled down1">
+						<li><a href=""><p>OnePlus5</p></a></li>
+						<li><a href=""><p>一加手机3T</p></a></li>
+						<li><a href=""><p>一加手机3</p></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-3 col-xs-12 footer-top phone1">
+					<h4 class="drop2">关于一加<span class="glyphicon glyphicon-chevron-down pull-right next2"></span></h4>
+					<ul class="list-unstyled down2">
+						<li><a href=""><p>了解一加</p></a></li>
+						<li><a href=""><p>加入一加</p></a></li>
+						<li><a href=""><p>H2OS</p></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-3 col-xs-12 footer-top">
+					<h4 class="drop3">服务支持<span class="glyphicon glyphicon-chevron-down pull-right next3"></span></h4>
+					<ul class="list-unstyled down3">
+						<li><a href=""><p>自助服务</p></a></li>
+						<li><a href=""><p>技术支持</p></a></li>
+						<li><a href=""><p>售后服务</p></a></li>
+						<li><a href=""><p>一加加多保</p></a></li>
+					</ul>
+				</div>
+			
+			</div>
+			<div class="col-lg-4 col-md-3 col-sm-3 col-xs-12 footer-padding">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 call ">
+					<div class="pull-right tellphoneInfo">
+						<span class="call-text">客服电话：</span>
+						<h1 class="call-number">400-888-1111</h1>
+						<a href="" class="flag"><img src="img/flag.png"></a>
+						<span class="call-text flag flag-text">Change location</span>
+						<button class="btn btn-default btn-call">在线客服</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$(".footer-top .drop1").click(function(){
+					$(".down1").slideToggle(800);
+					$(".drop1 span").toggleClass("glyphicon-chevron-up");	
+					$(".drop1 span").toggleClass("glyphicon-chevron-down");	
+				});
+				$(".footer-top .drop2").click(function(){
+					$(".down2").slideToggle(800);
+					$(".drop2 span").toggleClass("glyphicon-chevron-up");	
+					$(".drop2 span").toggleClass("glyphicon-chevron-down");	
+				});
+				$(".footer-top .drop3").click(function(){
+					$(".down3").slideToggle(800);
+					$(".drop3 span").toggleClass("glyphicon-chevron-up");	
+					$(".drop3 span").toggleClass("glyphicon-chevron-down");	
+				});		
+			});
+		</script>
+		<div class="clearfix">
+			
+		</div>
+		<!--页脚-->
+		<div class="footer-part clearfix">
+			<div class="col-lg-9 col-sm-9 col-md-9 col-xs-12">
+				<div class=" content-left">
+					<a href="" class="visible-xs"><img src="img/badge-icon.png">粤公网安备 44030402000178号</a>
+					<span class="con-left1">© 2013-2017  OnePlus. All Rights Reserved.</span>
+					<a href="" class="number hidden-xs">(粤ICP备13088308号-1)</a>
+					<img src="img/footer-icon1.png" class="footer-img hidden-xs"/>
+					<img src="img/footer-icon2.png" class="hidden-xs"/><br>
+					<a href="" class="visible-xs">备案号：粤ICP备13088308号-1</a>
+					<a href="" class="number hidden-xs"><img src="img/badge-icon.png">粤公网安备 44030402000178号</a>
+					<img src="img/footer-icon1.png" class="footer-img visible-xs"/>
+					<img src="img/footer-icon2.png" class="footer-img1 visible-xs"/>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-3 col-md-3 hidden-xs">
+				<div class="content-right text-right">
+					<span class="location">Change location</span>
+					<a href="" class="footer-flag"><img src="img/flag.png"></a>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
